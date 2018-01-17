@@ -15,12 +15,18 @@ cout<<"\nWhat is the interval? ";
 cin>>interval;
 
 cout<<"\n";
+
 do
 {
     maximum = maximum - interval;
     rows++;
 }
 while(maximum != a);
+
+if(a+(interval*rows) != b)
+{
+    cout<<"The maximum number of stars cannot be reached with that interval. \n";
+}
 
 for(i=1;i<=rows;i++)
 {
