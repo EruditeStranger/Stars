@@ -16,22 +16,22 @@ cin>>interval;
 
 cout<<"\n";
 
-do
+do //compute the number of rows for the 'for' loop.
 {
     maximum = maximum - interval;
     rows++;
 }
-while(maximum != a);
+while(maximum != a && maximum > 0); //(maximum > 0) so that "maximum" doesn't overshoot the limits and keep running until stack overflow
 
-if(a+(interval*(rows-1)) != b)
+if(a+(interval*(rows-1)) != b) //relationship between maximum and minimum number of stars.
 {
-    cout<<"The maximum number of stars cannot be reached with that interval. \n";
+    cout<<"The maximum number of stars cannot be reached with that interval. \n"; //failsafe in case on incorrect inputs.
 }
 else
 {
 for(i=1;i<=rows;i++)
 {
-    for(j=1;j<=minimum;j++)
+    for(j=1;j<=minimum;j++) //minimum keeps updating after each epoch.
     {
         cout<<"* ";
     }
