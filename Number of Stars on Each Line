@@ -23,11 +23,12 @@ do
 }
 while(maximum != a);
 
-if(a+(interval*rows) != b)
+if(a+(interval*(rows-1)) != b)
 {
     cout<<"The maximum number of stars cannot be reached with that interval. \n";
 }
-
+else
+{
 for(i=1;i<=rows;i++)
 {
     for(j=1;j<=minimum;j++)
@@ -38,4 +39,5 @@ for(i=1;i<=rows;i++)
     minimum = minimum + interval;
 }
 return 0;
+}
 }
