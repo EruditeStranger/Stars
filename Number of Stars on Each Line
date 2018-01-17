@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+int a,b,maximum,minimum,interval,i,j,rows=1;
+cout<<"What is the minimum number of stars? ";
+cin>>a;
+cout<<"\nWhat is the maximum number of stars? ";
+cin>>b;
+maximum = b;
+minimum = a;
+cout<<"\nWhat is the interval? ";
+cin>>interval;
+
+cout<<"\n";
+do
+{
+    maximum = maximum - interval;
+    rows++;
+}
+while(maximum != a);
+
+for(i=1;i<=rows;i++)
+{
+    for(j=1;j<=minimum;j++)
+    {
+        cout<<"* ";
+    }
+    cout<<"( "<<minimum<<" stars) \n";
+    minimum = minimum + interval;
+}
+return 0;
+}
