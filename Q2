@@ -65,16 +65,16 @@ avgPriceJuice = (sumPriceJuice/n);
 averagePrice = (totalPrice/n);
 
 
-    cout<<" Name    Cider   Juice   Subtotal(Cider) Subtotal(Juice)     Total"<<endl;
+    cout<<" Name\tCider\tJuice\tSubtotal(Cider)\tSubtotal(Juice)\tTotal"<<endl;
     cout<<"--------------------------------------------------------------------"<<endl;
 for(i=1;i<=n;i++)
 {
-    cout<<" "<<name[i]<<"        "<<ciderOrders[i]<<"        "<<juiceOrders[i]<<"             "<<priceCider[i]<<"            "<<priceJuice[i]<<"           "<<totalBeveragePrice[i]<<endl;
+    cout<<" "<<name[i]<<"\t"<<ciderOrders[i]<<"\t"<<juiceOrders[i]<<"\t\t"<<priceCider[i]<<"\t\t"<<priceJuice[i]<<"\t"<<totalBeveragePrice[i]<<endl;
 }
     cout<<endl;
     cout<<"---------------------------------------------------------------------"<<endl;
-    cout<<" Total     "<<sumCider<<"        "<<sumJuice<<"             "<<sumPriceCider<<"            "<<sumPriceJuice<<"           "<<totalPrice<<endl;
-    cout<<" Average   "<<avgCider<<"        "<<avgJuice<<"             "<<avgPriceCider<<"            "<<avgPriceJuice<<"           "<<averagePrice<<endl;
+    cout<<" Total\t\t"<<sumCider<<"\t"<<sumJuice<<"\t\t"<<sumPriceCider<<"\t\t"<<sumPriceJuice<<"\t"<<totalPrice<<endl;
+    cout<<" Average\t"<<avgCider<<"\t"<<avgJuice<<"\t\t"<<avgPriceCider<<"\t\t"<<avgPriceJuice<<"\t"<<averagePrice<<endl;
 return 0;
 }
 
