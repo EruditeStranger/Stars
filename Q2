@@ -8,11 +8,12 @@ int i,n;
 string name[100];
 int ciderOrders[100];
 int juiceOrders[100];
-int sumCider=0,sumJuice=0;
+float sumCider=0.0,sumJuice=0.0;
 float priceCider[100],priceJuice[100];
-float sumPriceCider,sumPriceJuice;
-float avgCider,avgJuice,avgPriceCider,avgPriceJuice;
-float totalBeveragePrice,avgBeveragePrice;
+float sumPriceCider = 0.0,sumPriceJuice = 0.0;
+float avgCider=1.0,avgJuice=1.0,avgPriceCider=1.0,avgPriceJuice=1.0,averagePrice=1.0;
+float totalPrice= 0.0;
+float totalBeveragePrice[100];
 
 cout<<"This program calculates prices of the orders. \n";
 
@@ -30,21 +31,50 @@ for(i=1;i<=n;i++)
     cout<<"\nHow many orders of juice did "<<name[i]<<" have? ";
     cin>> juiceOrders[i];
 }
+cout<<endl;
+cout<<endl;
+
 for(i=1;i<=n;i++) //sum of Cider and Juice
 {
     sumCider += ciderOrders[i];
     sumJuice += juiceOrders[i];
 }
+
 for(i=1;i<=n;i++)
 {
-    cout<<" "<<name[i];
-    cout<<"    "<<ciderOrders[i];
-    cout<<"      "<<juiceOrders[i];
     priceCider[i]=ciderOrders[i]*5.50;
     priceJuice[i]=juiceOrders[i]*4.50;
-    cout<<"        "<<priceCider[i];
-    cout<<"          "<<priceJuice[i]<<endl;
 }
-cout<<endl;
+
+for(i=1;i<=n;i++)
+{
+    sumPriceCider += priceCider[i];
+    sumPriceJuice += priceJuice[i];
+    totalBeveragePrice[i] = priceCider[i]+priceJuice[i];
+}
+
+for(i=1;i<=n;i++)
+{
+    totalPrice += totalBeveragePrice[i];
+}
+
+avgCider = (float)(sumCider/n);
+avgJuice = (float)(sumJuice/n);
+avgPriceCider = (sumPriceCider/n);
+avgPriceJuice = (sumPriceJuice/n);
+averagePrice = (totalPrice/n);
+
+
+    cout<<" Name    Cider   Juice   Subtotal(Cider) Subtotal(Juice)     Total"<<endl;
+    cout<<"--------------------------------------------------------------------"<<endl;
+for(i=1;i<=n;i++)
+{
+    cout<<" "<<name[i]<<"        "<<ciderOrders[i]<<"        "<<juiceOrders[i]<<"             "<<priceCider[i]<<"            "<<priceJuice[i]<<"           "<<totalBeveragePrice[i]<<endl;
+}
+    cout<<endl;
+    cout<<"---------------------------------------------------------------------"<<endl;
+    cout<<" Total     "<<sumCider<<"        "<<sumJuice<<"             "<<sumPriceCider<<"            "<<sumPriceJuice<<"           "<<totalPrice<<endl;
+    cout<<" Average   "<<avgCider<<"        "<<avgJuice<<"             "<<avgPriceCider<<"            "<<avgPriceJuice<<"           "<<averagePrice<<endl;
 return 0;
 }
+
