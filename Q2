@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+int i,n;
+string name[100];
+int ciderOrders[100];
+int juiceOrders[100];
+int sumCider=0,sumJuice=0;
+float priceCider[100],priceJuice[100];
+float sumPriceCider,sumPriceJuice;
+float avgCider,avgJuice,avgPriceCider,avgPriceJuice;
+float totalBeveragePrice,avgBeveragePrice;
+
+cout<<"This program calculates prices of the orders. \n";
+
+cout<<"\nHow many people are ordering beverages? ";
+cin>>n;
+cout<<"\n";
+for(i=1;i<=n;i++)
+{
+    cout<<"\nEnter the name of person #"<<i<<" ";
+    cin>> name[i];
+
+    cout<<"\nHow many orders of cider did "<<name[i]<<" have? ";
+    cin>> ciderOrders[i];
+
+    cout<<"\nHow many orders of juice did "<<name[i]<<" have? ";
+    cin>> juiceOrders[i];
+}
+for(i=1;i<=n;i++) //sum of Cider and Juice
+{
+    sumCider += ciderOrders[i];
+    sumJuice += juiceOrders[i];
+}
+for(i=1;i<=n;i++)
+{
+    cout<<" "<<name[i];
+    cout<<"    "<<ciderOrders[i];
+    cout<<"      "<<juiceOrders[i];
+    priceCider[i]=ciderOrders[i]*5.50;
+    priceJuice[i]=juiceOrders[i]*4.50;
+    cout<<"        "<<priceCider[i];
+    cout<<"          "<<priceJuice[i]<<endl;
+}
+cout<<endl;
+return 0;
+}
